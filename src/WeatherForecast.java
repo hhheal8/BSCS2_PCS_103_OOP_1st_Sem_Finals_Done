@@ -84,7 +84,7 @@ public class WeatherForecast {
         weatherCondition = "Rainy";
         weatherForecast.add(weatherCondition);
       }
-      if(isSunny == false && isStormy == false && isWindy == false && isCloudy == false && isRainy == false) {
+      if(isSunny.equals(false) && isStormy.equals(false) && isWindy.equals(false) && isCloudy.equals(false) && isRainy.equals(false)) {
         weatherCondition = "Partly Cloudy";
         weatherForecast.add(weatherCondition);
       }
