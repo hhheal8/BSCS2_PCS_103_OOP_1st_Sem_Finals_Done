@@ -44,12 +44,6 @@ public class WeatherForecast {
 
   private void simulateWeatherForecast() {
 
-    Boolean isSunny  = false;
-    Boolean isStormy = false;
-    Boolean isWindy  = false;
-    Boolean isCloudy = false;
-    Boolean isRainy  = false;
-
     for(int hour = 0; hour != 24; ++hour) {
 
       temperature   = Math.round(((double)(Math.random() * 100.00D)) * 100D) / 100D;
@@ -60,31 +54,26 @@ public class WeatherForecast {
       cloudCover    = Math.round(((double)(Math.random() * 100.00D)) * 100D) / 100D;
       
       if(temperature > 80 && humidity > 50 && precipitation == 0 && windSpeed < 10 && cloudCover < 30) {
-        isSunny = true;
         weatherCondition = "Sunny";
         weatherForecast.add(weatherCondition);
       }
-      if(temperature > 60 && humidity > 40 && precipitation > 0 && windSpeed > 20 && cloudCover > 70) {
-        isStormy = true;
+      else if(temperature > 60 && humidity > 40 && precipitation > 0 && windSpeed > 20 && cloudCover > 70) {
         weatherCondition = "Stormy";
         weatherForecast.add(weatherCondition);
       }
-      if(temperature > 40 && humidity > 30 && precipitation == 0 && windSpeed > 10) {
-        isWindy = true;
+      else if(temperature > 40 && humidity > 30 && precipitation == 0 && windSpeed > 10) {
         weatherCondition = "Windy";
         weatherForecast.add(weatherCondition);        
       }
-      if(temperature > 40 && humidity > 30 && precipitation == 0 && windSpeed > 10 && cloudCover > 30 && cloudCover < 70) {
-        isCloudy = true;
+      else if(temperature > 40 && humidity > 30 && precipitation == 0 && windSpeed > 10 && cloudCover > 30 && cloudCover < 70) {
         weatherCondition = "Cloudy";
         weatherForecast.add(weatherCondition);        
       }
-      if(temperature > 60 && humidity > 40 && precipitation > 0) {
-        isRainy = true;
+      else if(temperature > 60 && humidity > 40 && precipitation > 0) {
         weatherCondition = "Rainy";
         weatherForecast.add(weatherCondition);
       }
-      if(isSunny.equals(false) && isStormy.equals(false) && isWindy.equals(false) && isCloudy.equals(false) && isRainy.equals(false)) {
+      else {
         weatherCondition = "Partly Cloudy";
         weatherForecast.add(weatherCondition);
       }
